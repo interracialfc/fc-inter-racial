@@ -4,6 +4,7 @@ import { Poppins, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import HashScroll from "./components/hash-scroll";
 import { siteTitle } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
           src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v22.0&appId=250706382314503"
           strategy="afterInteractive"
         />
+        <Analytics />
       </body>
     </html>
   );
