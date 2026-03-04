@@ -202,7 +202,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
       </div>
 
       {player.gallery && (
-        <div className="mx-auto mt-30 max-w-6xl">
+        <div className="mx-auto max-w-6xl md:mt-30">
           <h1 className="my-3 mb-10 text-center text-2xl font-bold">
             {`${player.name} Photos`}
           </h1>

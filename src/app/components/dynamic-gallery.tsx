@@ -76,7 +76,7 @@ export default function DynamicGallery({
           <div
             key={idx}
             onClick={() => setSelectedIndex(idx)}
-            className="group relative cursor-pointer overflow-hidden rounded bg-gray-100 shadow-md transition-all hover:ring-2 hover:ring-black"
+            className="group relative cursor-pointer overflow-hidden rounded bg-gray-200 shadow-md transition-all hover:ring-2 hover:ring-black"
           >
             <Image
               width={800}
