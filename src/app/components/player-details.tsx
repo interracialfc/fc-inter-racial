@@ -7,6 +7,7 @@ import { Player, SanityImage } from "@/lib/types";
 import { PortableText } from "@portabletext/react";
 import Breadcrumbs from "./breadcrumbs";
 import { formatDate } from "@/lib/utils";
+import DynamicGallery from "./dynamic-gallery";
 
 interface PlayerDetailsProps {
   player: Player;
@@ -199,6 +200,15 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
           </div>
         </div>
       </div>
+
+      {player.gallery && (
+        <div className="mx-auto max-w-6xl md:mt-30">
+          <h1 className="my-3 mb-10 text-center text-2xl font-bold">
+            {`${player.name} Photos`}
+          </h1>
+          <DynamicGallery images={player.gallery} />
+        </div>
+      )}
     </div>
   );
 }
