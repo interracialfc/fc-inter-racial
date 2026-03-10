@@ -111,16 +111,23 @@ const Footer = () => {
         <div className="space-y-4 text-center">
           <p className="text-lg font-medium text-gray-300">Copyright © 2026</p>
           <p className="text-sm font-light tracking-wide text-gray-500">
-            This website is built by{" "}
+            {"This website is built by "}
             <a
               href="https://grantimbo.com"
               target="_blank"
               className="text-gray-300 hover:text-white"
             >
               Grant Imbo
-            </a>{" "}
+            </a>
             <span className="block md:inline">
-              and <span className="text-gray-300">John Rey Bautista</span>
+              {" and "}
+              <a
+                className="text-gray-300 hover:text-white"
+                href="https://jrbautista.dev/"
+                target="_blank"
+              >
+                John Rey Bautista
+              </a>
             </span>
           </p>
         </div>
