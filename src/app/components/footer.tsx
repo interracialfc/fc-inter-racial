@@ -21,6 +21,7 @@ const Footer = () => {
                 src="/imgs/sponsors/popsis.png"
                 width={163}
                 height={168}
+                unoptimized
               />
             </a>
 
@@ -34,6 +35,7 @@ const Footer = () => {
                 src="/imgs/sponsors/breakroom.png"
                 width={253}
                 height={175}
+                unoptimized
               />
             </a>
 
@@ -47,6 +49,7 @@ const Footer = () => {
                 src="/imgs/sponsors/kebabkings.png"
                 width={454}
                 height={108}
+                unoptimized
               />
             </a>
 
@@ -60,6 +63,7 @@ const Footer = () => {
                 src="/imgs/sponsors/liso.png"
                 width={109}
                 height={169}
+                unoptimized
               />
             </a>
 
@@ -73,6 +77,7 @@ const Footer = () => {
                 src="/imgs/sponsors/lobo.png"
                 width={182}
                 height={173}
+                unoptimized
               />
             </a>
           </div>
@@ -90,6 +95,7 @@ const Footer = () => {
               src="/imgs/facebook.svg"
               width={46}
               height={46}
+              unoptimized
             />
           </a>
 
@@ -103,6 +109,7 @@ const Footer = () => {
               src="/imgs/youtube.svg"
               width={46}
               height={46}
+              unoptimized
             />
           </a>
         </div>

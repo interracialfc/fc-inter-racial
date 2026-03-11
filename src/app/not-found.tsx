@@ -16,6 +16,7 @@ export default function notFound() {
           alt="Out of bounds"
           width={120}
           height={120}
+          unoptimized
         />
       </Link>
       <div className="relative mb-8 h-64 w-64 md:h-80 md:w-80">
