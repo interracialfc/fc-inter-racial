@@ -8,10 +8,14 @@ import { SanityImage } from "@/lib/types";
 
 interface DynamicGalleryProps {
   images: SanityImage | SanityImage[];
+  hasContainer?: boolean;
+  landscape?: boolean;
 }
 
 export default function DynamicGallery({
   images: inputImages,
+  hasContainer = false,
+  landscape = false,
 }: DynamicGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(false); // New Loading State
@@ -66,19 +70,22 @@ export default function DynamicGallery({
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <div
+        className={`grid grid-cols-2 gap-4 ${hasContainer ? "lg:grid-cols-2" : "md:grid-cols-3 lg:grid-cols-4"}`}
+      >
         {images.map((img, idx) => (
           <div
             key={idx}
             onClick={() => changeImage(idx)} // Trigger loading on click
-            className="group relative cursor-pointer overflow-hidden rounded bg-gray-200 shadow-md transition-all hover:ring-2 hover:ring-black"
+            className="group relative cursor-pointer overflow-hidden rounded bg-gray-200 shadow-md transition-all hover:ring-2 hover:ring-black dark:bg-black/20 dark:hover:ring-white"
           >
             <Image
               width={800}
               height={800}
               src={urlFor(img).width(800).height(800).fit("crop").url()}
               alt={`${img?.alt} - image ${idx + 1}`}
-              className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${landscape ? "aspect-4/3" : "aspect-square"}`}
+              unoptimized
             />
           </div>
         ))}

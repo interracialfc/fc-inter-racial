@@ -39,8 +39,8 @@ export default function HeroSliderClient({ slides }: { slides: HeroSlide[] }) {
               backgroundImage: `url(${slide.image ? urlFor(slide.image).width(1920).url() : ""})`,
             }}
           >
-            <div className="absolute inset-0 bg-linear-to-r from-black via-black/40 to-red-900/40" />
-            <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-red-900/40" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent" />
           </div>
 
           <div className="relative z-20 mx-auto flex h-full max-w-7xl flex-col justify-center px-8">
@@ -59,7 +59,7 @@ export default function HeroSliderClient({ slides }: { slides: HeroSlide[] }) {
               <div className="mt-6">
                 <Link
                   href={slide.buttonLink}
-                  className="inline-block cursor-pointer rounded-md border-2 border-white bg-white px-8 py-3 font-semibold transition-all hover:bg-transparent hover:text-white"
+                  className="inline-block cursor-pointer rounded-md border-2 border-white bg-white px-8 py-3 font-semibold transition-all hover:bg-transparent hover:text-white dark:text-black"
                 >
                   {slide.button}
                 </Link>
@@ -79,7 +79,7 @@ export default function HeroSliderClient({ slides }: { slides: HeroSlide[] }) {
         </button>
         <button
           onClick={nextSlide}
-          className="cursor-pointer rounded-full bg-white p-3 text-black transition-colors hover:bg-red-600 hover:text-white"
+          className="hover:bg-irOrange cursor-pointer rounded-full bg-white p-3 text-black transition-colors hover:text-white"
         >
           <ChevronRight size={24} />
         </button>

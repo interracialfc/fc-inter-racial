@@ -18,11 +18,11 @@ const OurStory = async () => {
   return (
     <section
       id="our-story"
-      className="scroll-mt-16 bg-white px-6 py-20 font-sans text-black md:scroll-mt-20"
+      className="scroll-mt-16 px-6 py-20 font-sans md:scroll-mt-20"
     >
       <div className="mx-auto max-w-2xl text-center">
         {/* Main Section Title */}
-        <h2 className="mb-16 text-6xl font-black tracking-tight text-black">
+        <h2 className="mb-16 text-6xl font-black tracking-tight text-black dark:text-white">
           {data?.title || "Our Story"}
         </h2>
 
@@ -35,12 +35,13 @@ const OurStory = async () => {
               fill
               className="object-cover"
               priority
+              unoptimized
             />
           </div>
         )}
 
         {/* Sub-heading */}
-        <div className="text-left text-black">
+        <div className="text-left text-black dark:text-white">
           <PortableText value={data.content} components={customBlock} />
         </div>
       </div>

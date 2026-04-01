@@ -3,7 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --irOrange: #e0572c;
+  --irYellow: #edb02d;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Class-based dark (matches `dark` on <html> from theme toggle) */
+.dark {
+  --background: #1c1c1d;
+  --foreground: #fff;
+}
+
+/* .dark .sponsor-logos img {
+  filter: contrast(0) sepia(100%) saturate(1000%) hue-rotate(20deg);
+} */
 
 html {
   scroll-behavior: smooth;
@@ -11,18 +25,11 @@ html {
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
   --font-narrow: var(--font-bebas);
+  --color-irOrange: var(--irOrange);
+  --color-irYellow: var(--irYellow);
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);

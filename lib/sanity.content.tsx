@@ -3,19 +3,29 @@ import { PortableTextComponents } from "@portabletext/react";
 export const customBlock: PortableTextComponents = {
   block: {
     h1: ({ children }) => (
-      <h1 className="mb-6 text-3xl font-bold text-black">{children}</h1>
+      <h1 className="mb-6 text-3xl font-bold text-black dark:text-white">
+        {children}
+      </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="mb-4 text-2xl font-bold text-black">{children}</h2>
+      <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mb-2 text-xl font-bold text-black">{children}</h3>
+      <h3 className="mb-2 text-xl font-bold text-black dark:text-white">
+        {children}
+      </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mb-2 text-lg font-bold text-black">{children}</h4>
+      <h4 className="mb-2 text-lg font-bold text-black dark:text-white">
+        {children}
+      </h4>
     ),
     h5: ({ children }) => (
-      <h5 className="text-md mb-2 font-bold text-black">{children}</h5>
+      <h5 className="text-md mb-2 font-bold text-black dark:text-white">
+        {children}
+      </h5>
     ),
     // Note: Use 'normal' instead of 'p' for standard Sanity paragraphs
     normal: ({ children }) => (
@@ -46,7 +56,9 @@ export const customBlock: PortableTextComponents = {
   // 3. Add Inline Styles (Bold, Italic, Link)
   marks: {
     strong: ({ children }) => (
-      <strong className="font-bold text-gray-900">{children}</strong>
+      <strong className="font-bold text-gray-900 dark:text-white">
+        {children}
+      </strong>
     ),
     em: ({ children }) => <em className="italic-style italic">{children}</em>,
     link: ({ children, value }) => (
