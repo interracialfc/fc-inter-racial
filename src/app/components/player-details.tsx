@@ -31,7 +31,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
   const [activeTab, setActiveTab] = useState("profile");
 
   return (
-    <div className="min-h-[60vh] bg-[#dde1e4] p-4 py-24 font-sans text-black md:pt-30">
+    <div className="relative min-h-[60vh] bg-[#dde1e4] p-4 py-24 font-sans text-black md:pt-30 dark:bg-[#1c1c1d] dark:text-white">
       <div className="mx-auto w-full max-w-6xl">
         <Breadcrumbs
           currentPage={player.name}
@@ -45,15 +45,17 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
         <div className="relative flex aspect-4/5 justify-center overflow-hidden bg-[#dbdadf]">
           {player.profilePicture ? (
             <Image
-              width={600}
-              height={700}
+              width={896}
+              height={1120}
               src={urlFor(player.profilePicture)
-                .width(600)
+                .width(896)
+                .height(1120)
                 .auto("format")
                 .url()}
               alt={player.profilePicture.alt || player.name}
               loading="lazy"
               className="object-cover"
+              unoptimized
             />
           ) : (
             <Image
@@ -62,6 +64,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
               alt="Unknown player"
               src="/imgs/profile-placeholder.png"
               className="object-cover"
+              unoptimized
             />
           )}
         </div>
@@ -77,7 +80,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
             <h1 className="text-6xl leading-tight font-bold tracking-tight">
               {player.name}
             </h1>
-            <p className="mt-3 text-xl font-bold tracking-widest uppercase">
+            <p className="mt-3 text-xl font-bold tracking-widest uppercase dark:text-gray-400">
               {getPositionLabel(player.position)}
             </p>
           </header>
@@ -97,6 +100,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
                     src="/imgs/facebook.svg"
                     width={40}
                     height={40}
+                    unoptimized
                   />
                 </a>
               )}
@@ -126,7 +130,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
               className={`cursor-pointer rounded-lg border-2 px-8 py-2 font-bold shadow-sm transition-all ${
                 activeTab === "profile"
                   ? "border-white bg-white text-black"
-                  : "border-black bg-transparent text-black hover:bg-black hover:text-white"
+                  : "border-black bg-transparent text-black hover:bg-black hover:text-white dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black"
               }`}
             >
               Profile
@@ -136,7 +140,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
               className={`cursor-pointer rounded-lg border-2 px-8 py-2 font-bold shadow-sm transition-all ${
                 activeTab === "bio"
                   ? "border-white bg-white text-black"
-                  : "border-black bg-transparent text-black hover:bg-black hover:text-white"
+                  : "border-black bg-transparent text-black hover:bg-black hover:text-white dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black"
               }`}
             >
               Bio
@@ -202,7 +206,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
       </div>
 
       {player.gallery && (
-        <div className="mx-auto mt-20 max-w-6xl md:mt-30">
+        <div className="mx-auto mt-10 max-w-6xl md:mt-20">
           <h1 className="my-3 mb-10 text-center text-2xl font-bold">
             {`${player.name} Photos`}
           </h1>

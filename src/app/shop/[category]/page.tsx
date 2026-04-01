@@ -52,7 +52,7 @@ export default async function CategoryPage({
   return (
     <>
       <Header />
-      <main className="scroll-mt-36 bg-white px-4 py-20 font-sans md:scroll-mt-20 md:py-36">
+      <main className="scroll-mt-36 px-4 py-20 font-sans md:scroll-mt-20 md:py-36">
         <div className="mx-auto max-w-6xl">
           {/* 1. Breadcrumb Component */}
           <Breadcrumbs
@@ -61,7 +61,7 @@ export default async function CategoryPage({
             currentPage={formatValueToTitle(products[0]?.category)}
           />
 
-          <h2 className="mb-12 text-center text-4xl font-black tracking-tight text-black md:text-6xl">
+          <h2 className="mb-12 text-center text-4xl font-black tracking-tight md:text-6xl">
             {formatValueToTitle(products[0]?.category)}
           </h2>
 
@@ -72,7 +72,7 @@ export default async function CategoryPage({
                 href={`/shop/${product.category}/${product.slug.current}`}
                 className="group block"
               >
-                <div className="relative aspect-4/5 overflow-hidden rounded-lg bg-gray-200 ring-black transition-all hover:ring-2">
+                <div className="dark:ring-irOrange relative aspect-4/5 overflow-hidden rounded-lg bg-gray-200 ring-black transition-all hover:ring-2">
                   <Image
                     src={urlFor(product.mainImage).width(600).url()}
                     alt={product.name}

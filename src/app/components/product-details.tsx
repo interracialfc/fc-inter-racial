@@ -44,7 +44,7 @@ export default function ProductDetails({ product }: { product: Product }) {
   };
 
   return (
-    <div className="scroll-mt-36 bg-white px-4 py-20 font-sans md:scroll-mt-20 md:py-36">
+    <div className="scroll-mt-36 px-4 py-20 font-sans md:scroll-mt-20 md:py-36">
       <div className="mx-auto max-w-6xl">
         {/* 1. Breadcrumb Component (from your 1st image) */}
         <Breadcrumbs
@@ -76,13 +76,13 @@ export default function ProductDetails({ product }: { product: Product }) {
             <div className="absolute right-6 bottom-6 flex space-x-2">
               <button
                 onClick={prevImage}
-                className="rounded-full bg-white p-3 shadow-md transition-transform hover:bg-gray-100 active:scale-95"
+                className="rounded-full bg-white p-3 text-black shadow-md transition-transform hover:bg-gray-100 active:scale-95"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={nextImage}
-                className="rounded-full bg-white p-3 shadow-md transition-transform hover:bg-gray-100 active:scale-95"
+                className="rounded-full bg-white p-3 text-black shadow-md transition-transform hover:bg-gray-100 active:scale-95"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -97,7 +97,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 onClick={() => setCurrentIndex(i)}
                 className={`aspect-square w-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-sm bg-gray-100 transition-all md:w-full ${
                   currentIndex === i
-                    ? "ring-2 ring-black"
+                    ? "dark:ring-irOrange ring-2 ring-black"
                     : "ring-gray-400 hover:ring-1"
                 }`}
               >
@@ -114,7 +114,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 
           {/* 3. Product Info (Order 3 on mobile/tablet) */}
           <div className="flex flex-col md:order-3 md:col-span-5">
-            <span className="text-sm font-medium text-orange-700">
+            <span className="text-irOrange text-sm font-medium">
               {formatValueToTitle(product.status)}
             </span>
             <h1 className="mt-3 text-3xl font-bold tracking-tight">
@@ -126,7 +126,7 @@ export default function ProductDetails({ product }: { product: Product }) {
             <p className="mt-4 text-xl font-bold">₱{product.price}</p>
 
             {/* Description */}
-            <div className="mt-8 space-y-6 leading-relaxed text-gray-800">
+            <div className="mt-8 space-y-6 leading-relaxed text-gray-800 dark:text-gray-300">
               <p className="text-sm">{product.description}</p>
             </div>
 
@@ -134,7 +134,7 @@ export default function ProductDetails({ product }: { product: Product }) {
             <div className="mt-8 space-y-3">
               <a
                 href={buttonLink || "#"}
-                className={`block w-full rounded-md bg-black py-5 text-center text-lg font-bold text-white transition-colors hover:bg-zinc-800 ${hasButtonLink ? "cursor-pointer" : "cursor-not-allowed"}`}
+                className={`dark:bg-irOrange dark:hover:bg-irOrange/80 block w-full rounded-md bg-black py-5 text-center text-lg font-bold text-white transition-colors hover:bg-zinc-800 ${hasButtonLink ? "cursor-pointer" : "cursor-not-allowed"}`}
               >
                 {product.button}
               </a>

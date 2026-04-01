@@ -46,14 +46,21 @@ export const metadata: Metadata = {
   },
 };
 
+const themeBootstrapScript = `(function(){try{var k='smt-theme';var t=localStorage.getItem(k);var d=document.documentElement;d.classList.remove('light');if(t==='dark'){d.classList.add('dark')}else{d.classList.remove('dark');d.classList.add('light')}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} ${bebbas.variable} antialiased`}>
+        <Script
+          id="theme-bootstrap"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeBootstrapScript }}
+        />
         {/* 1. The fb-root div must be at the top level of the body */}
         <div id="fb-root"></div>
 

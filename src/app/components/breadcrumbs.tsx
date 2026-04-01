@@ -69,7 +69,7 @@ export default function Breadcrumbs({
       )}
 
       {/* Current Page - Bold & Pinned Left */}
-      <span className="max-w-45 truncate font-bold text-gray-900 md:max-w-none">
+      <span className="max-w-45 truncate font-bold text-gray-900 md:max-w-none dark:text-gray-100">
         {currentPage}
       </span>
     </nav>

@@ -6,7 +6,7 @@ import { Player } from "@/lib/types";
 import Breadcrumbs from "./breadcrumbs";
 
 // --- Types ---
-type Position = "CH" | "FW" | "MF" | "DF" | "GK";
+type Position = "CH" | "FW" | "MF" | "DF" | "GK" | "OTH";
 
 interface Category {
   label: string;
@@ -18,12 +18,10 @@ interface Category {
 const PlayerCard = ({ player }: { player: Player }) => (
   <a
     href={`/players/${player.slug.current}`}
-    className="group relative aspect-4/5 overflow-hidden rounded-md bg-gray-200 transition-all hover:ring-2 hover:ring-gray-600"
+    className="group dark:ring-gray-black relative aspect-4/5 overflow-hidden rounded-md bg-gray-200 transition-all hover:ring-2 hover:ring-black dark:bg-black dark:hover:ring-white"
   >
     <div className="flex h-full w-full items-end bg-linear-to-br">
-      <div className="absolute inset-0 z-10 bg-black/10 transition-colors duration-500 group-hover:bg-transparent" />
-
-      <p className="absolute z-20 w-full bg-linear-to-t from-gray-500 to-transparent p-2 pt-5 font-bold tracking-tighter text-white uppercase">
+      <p className="absolute z-20 w-full bg-linear-to-t from-gray-500 to-transparent p-2 pt-5 font-bold tracking-tighter text-white uppercase dark:from-[#1c1c1d]/90">
         {player.name}
       </p>
 
@@ -32,7 +30,8 @@ const PlayerCard = ({ player }: { player: Player }) => (
           fill
           alt={player.name}
           src={urlFor(player.profilePicture).width(300).auto("format").url()}
-          className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full object-cover opacity-100 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 md:opacity-90 dark:md:opacity-85"
+          unoptimized
         />
       ) : (
         <Image
@@ -40,7 +39,8 @@ const PlayerCard = ({ player }: { player: Player }) => (
           height={1120}
           alt="Unknown player"
           src="/imgs/profile-placeholder.png"
-          className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full object-cover opacity-100 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 md:opacity-90 dark:md:opacity-85"
+          unoptimized
         />
       )}
     </div>
@@ -59,13 +59,21 @@ const PlayerGroup = ({
   if (players.length === 0) return null;
   return (
     <div className="mb-16">
-      <h3
-        id={id}
-        className="mb-8 text-xl font-bold tracking-widest text-gray-800 uppercase md:text-2xl"
-      >
-        {title}
-      </h3>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+      <div className="mb-8">
+        <h3
+          id={id}
+          className="text-xl font-bold tracking-widest text-gray-800 uppercase md:text-2xl dark:text-white/65"
+        >
+          {title}
+        </h3>
+        {id == "others" && (
+          <p className="mx-auto mt-2 max-w-sm text-xs text-black/70 dark:text-white/40">
+            Club legends and inactive players who continue to serve the
+            organization as part of our support staff.
+          </p>
+        )}
+      </div>
+      <div className="grid grid-cols-2 flex-wrap gap-4 md:grid-cols-4 lg:grid-cols-6">
         {players.map((player) => (
           <PlayerCard key={player._id} player={player} />
         ))}
@@ -81,6 +89,7 @@ const categories: Category[] = [
   { label: "MIDFIELDERS", id: "midfielders", filter: "MF" },
   { label: "DEFENDERS", id: "defenders", filter: "DF" },
   { label: "GOALKEEPERS", id: "goalkeepers", filter: "GK" },
+  { label: "OTHERS", id: "others", filter: "OTH" },
 ];
 
 // --- Main Server Component ---
@@ -98,7 +107,7 @@ export default async function PlayersSection({
 
   return (
     <section
-      className="scroll-mt-36 bg-white px-4 py-20 font-sans md:scroll-mt-20 md:py-36"
+      className="scroll-mt-36 px-4 py-20 font-sans md:scroll-mt-20 md:py-36"
       id="players"
     >
       <div className="mx-auto max-w-6xl text-center">
@@ -107,7 +116,7 @@ export default async function PlayersSection({
             <Breadcrumbs currentPage="Players" />
           </div>
         )}
-        <h2 className="mb-12 text-4xl font-black tracking-tight text-black md:text-6xl">
+        <h2 className="mb-12 text-4xl font-black tracking-tight text-black md:text-6xl dark:text-white">
           Players
         </h2>
 
