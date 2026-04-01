@@ -15,9 +15,12 @@
   --foreground: #fff;
 }
 
-/* .dark .sponsor-logos img {
-  filter: contrast(0) sepia(100%) saturate(1000%) hue-rotate(20deg);
-} */
+img.white-to-black {
+  filter: contrast(0) sepia() saturate(0) hue-rotate(0) brightness(0.2);
+}
+.dark img.white-to-black {
+  filter: none;
+}
 
 html {
   scroll-behavior: smooth;
