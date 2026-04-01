@@ -42,7 +42,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
 
       <div className="mx-auto mb-2 grid w-full max-w-6xl grid-cols-1 items-start gap-8 md:mb-12 md:grid-cols-2">
         {/* Left Side: Player Image */}
-        <div className="relative flex aspect-4/5 justify-center overflow-hidden bg-[#dbdadf]">
+        <div className="relative flex aspect-4/5 justify-center overflow-hidden rounded-2xl bg-[#dbdadf]">
           {player.profilePicture ? (
             <Image
               width={896}
@@ -72,7 +72,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
         {/* Right Side: Player Info */}
         <div className="space-y-6">
           <header>
-            <h2 className="font-narrow mb-2 text-8xl leading-none font-black">
+            <h2 className="font-narrow text-irOrange mb-2 text-8xl leading-none font-black">
               {player.squadNumber !== undefined &&
                 player.squadNumber !== null &&
                 `#${player.squadNumber}`}
@@ -80,7 +80,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
             <h1 className="text-6xl leading-tight font-bold tracking-tight">
               {player.name}
             </h1>
-            <p className="mt-3 text-xl font-bold tracking-widest uppercase dark:text-gray-400">
+            <p className="mt-3 text-xl font-bold tracking-widest text-gray-500 uppercase dark:text-gray-400">
               {getPositionLabel(player.position)}
             </p>
           </header>
@@ -101,6 +101,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
                     width={40}
                     height={40}
                     unoptimized
+                    className="white-to-black"
                   />
                 </a>
               )}
@@ -117,6 +118,7 @@ export default function PlayerDetails({ player }: PlayerDetailsProps) {
                     src="/imgs/instagram.svg"
                     width={40}
                     height={40}
+                    className="white-to-black"
                   />
                 </a>
               )}
