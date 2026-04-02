@@ -3,7 +3,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="bg-black px-4 py-20 text-white">
-      <div className="mx-auto flex max-w-[560px] flex-col items-center">
+      <div className="mx-auto flex max-w-[850px] flex-col items-center">
         {/* Partners Section */}
         <section className="mb-40 w-full">
           <h2 className="mb-20 text-center text-2xl font-bold tracking-tight">
@@ -14,11 +14,11 @@ const Footer = () => {
             help us achieve our goals on and off the field.
           </p> */}
 
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-90">
+          <div className="partner-logos flex flex-wrap items-center justify-center gap-12 opacity-90">
             <a
               href="https://www.instagram.com/kebabkingzdumaguete/"
               target="_blank"
-              className="w-70 transition-opacity hover:opacity-50"
+              className="w-70 transition-opacity"
             >
               <Image
                 alt="Kebab Kings"
@@ -31,7 +31,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/profile.php?id=61579370682002"
               target="_blank"
-              className="w-38 transition-opacity hover:opacity-50"
+              className="w-38 transition-opacity"
             >
               <Image
                 alt="Montevista Studio Apartments"
@@ -45,7 +45,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/popsis.official/"
               target="_blank"
-              className="w-28 transition-opacity hover:opacity-50"
+              className="w-28 transition-opacity"
             >
               <Image
                 alt="Popsis"
@@ -59,7 +59,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/BreakroomCafeDGTE"
               target="_blank"
-              className="w-40 transition-opacity hover:opacity-50"
+              className="w-40 transition-opacity"
             >
               <Image
                 alt="Breakroom Cafe"
@@ -73,7 +73,7 @@ const Footer = () => {
             <a
               href="https://www.youtube.com/@LifeWithLobo"
               target="_blank"
-              className="w-30 transition-opacity hover:opacity-50"
+              className="w-30 transition-opacity"
             >
               <Image
                 alt="Life with Lobo"
@@ -87,7 +87,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/profile.php?id=100064115258151"
               target="_blank"
-              className="w-27 transition-opacity hover:opacity-50"
+              className="w-27 transition-opacity"
             >
               <Image
                 alt="Sour Sip Relish that Dish"
@@ -101,7 +101,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/H2ELq"
               target="_blank"
-              className="w-18 transition-opacity hover:opacity-50"
+              className="w-18 transition-opacity"
             >
               <Image
                 alt="Liso"
@@ -111,6 +111,16 @@ const Footer = () => {
                 unoptimized
               />
             </a>
+
+            <span className="w-60">
+              <Image
+                alt="Tim Rapp"
+                src="/imgs/sponsors/tim.png"
+                width={500}
+                height={69}
+                unoptimized
+              />
+            </span>
           </div>
         </section>
 
@@ -119,7 +129,7 @@ const Footer = () => {
           <a
             href="https://facebook.com/fcinterracial"
             target="_blank"
-            className="opacity-30 transition-opacity hover:opacity-70"
+            className="opacity-80 transition-opacity hover:opacity-100"
           >
             <Image
               alt="Facebook"
@@ -133,7 +143,7 @@ const Footer = () => {
           <a
             href="https://www.youtube.com/@FCInterRacial"
             target="_blank"
-            className="opacity-30 transition-opacity hover:opacity-70"
+            className="opacity-80 transition-opacity hover:opacity-100"
           >
             <Image
               alt="Facebook"

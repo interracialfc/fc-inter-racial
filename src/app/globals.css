@@ -22,6 +22,9 @@ img.white-to-black {
   filter: none;
 }
 
+.partner-logos img:hover {
+  filter: contrast(0) sepia() saturate(1000%) hue-rotate(320deg);
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
